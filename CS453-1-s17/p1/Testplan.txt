@@ -1,0 +1,46 @@
+Test Plan
+    1.Filename completion and command history
+        In this part, I tested correct command and incorrect command. both types of commands are
+        recorded properly. The TAB key should complete the file name,the use of arrow keys to
+        access the history of commands typed in by the user.
+    2. Normal command execution
+        system command with arguments or without arguments should be both tested. Also incorrect
+        command should be test to see what is output of the myshell.
+    3.Handling empty commands
+        test empty commands by just press ENTER key to see if myshell shows another prompt.
+    4. Handing EOF
+        user type ctrl-c and ctrl-d to see the behavior of the shell.
+    5. Exit command
+        exit command is build in command that should terminates the shell normall.
+    6. change directory command
+        Test if cd command without any arguments shoudl change the working directory to the user
+        's home directory;
+        Test if cd .. command should go one upper level directory;
+        Test if cd ./ stays in current dirctory;
+        Test if cd ./dicxxx/dicxxx goes to proper directory
+    7. Prompt 
+        prompt should be current directory with "myshell>"
+    8. Show version
+        Test if the version number matches current git version
+    9. Background jobs
+        if command with & , the shell should send the job to the background and immediatly return a
+        new prompt. 
+        & sign could attach to the end of command or without attach it. If there are blanks between
+        command and & or blanks after &, jobs still could be parsed correctly.
+    10. Job List
+         Job list should be add to the linked list provided by the p0, each time, a background job
+         added, on the screen it should show the job number, process-id, and command with &.
+    11. Job Control
+        Test background jobs by using sleep xxx& and some immediate job like ls to see if it could
+        report that job finished.
+    12. Jobs command
+         Jobs command is a build-in command. It should show all finished jobs or on going jobs. By
+         enter second jobs command, finished jobs should be removed from linked list since it has
+         been reported by last jobs command;
+         If all background jobs finish and user inputs a new job, that job number should start from
+         1; 
+         all background jobs should in orinigal order;
+
+    13. Valgrind test
+         check if there is any memory leak.
+

@@ -1,0 +1,86 @@
+\hypertarget{mydash__buildingIn_8c}{}\section{mydash\+\_\+building\+In.\+c File Reference}
+\label{mydash__buildingIn_8c}\index{mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}}
+{\ttfamily \#include \char`\"{}mydash.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mydash__buildingIn_8c_af6268186b5e665c0fd5508e1539001f4}{is\+Build\+In\+Command} (char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em return 1 if the command is a build-\/in command \end{DoxyCompactList}\item 
+void \hyperlink{mydash__buildingIn_8c_a9f0090c390f753ef802935eea9a001c3}{run\+Build\+In\+Command} (char $\ast$$\ast$argv, pid\+\_\+t pid, struct list $\ast$background\+\_\+job\+\_\+list)
+\begin{DoxyCompactList}\small\item\em run building command \end{DoxyCompactList}\item 
+void \hyperlink{mydash__buildingIn_8c_a40184d2b9a6f9f7ebe2912cb04e8946e}{mydash\+\_\+jobs} (pid\+\_\+t pid, struct list $\ast$background\+\_\+job\+\_\+list)
+\begin{DoxyCompactList}\small\item\em process jobs command and list all running process and done process in the screen \end{DoxyCompactList}\item 
+void \hyperlink{mydash__buildingIn_8c_aa3d9ee89b28a8edf0317b8f4f9b63678}{mydash\+\_\+job\+\_\+report} (pid\+\_\+t pid, struct list $\ast$background\+\_\+job\+\_\+list)
+\begin{DoxyCompactList}\small\item\em report finished job by displaying job number and command \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mydash__buildingIn_8c_af6268186b5e665c0fd5508e1539001f4}\label{mydash__buildingIn_8c_af6268186b5e665c0fd5508e1539001f4}} 
+\index{mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}!is\+Build\+In\+Command@{is\+Build\+In\+Command}}
+\index{is\+Build\+In\+Command@{is\+Build\+In\+Command}!mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}}
+\subsubsection{\texorpdfstring{is\+Build\+In\+Command()}{isBuildInCommand()}}
+{\footnotesize\ttfamily int is\+Build\+In\+Command (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+return 1 if the command is a build-\/in command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & parsed command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the command is a build-\/in command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydash__buildingIn_8c_aa3d9ee89b28a8edf0317b8f4f9b63678}\label{mydash__buildingIn_8c_aa3d9ee89b28a8edf0317b8f4f9b63678}} 
+\index{mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}!mydash\+\_\+job\+\_\+report@{mydash\+\_\+job\+\_\+report}}
+\index{mydash\+\_\+job\+\_\+report@{mydash\+\_\+job\+\_\+report}!mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}}
+\subsubsection{\texorpdfstring{mydash\+\_\+job\+\_\+report()}{mydash\_job\_report()}}
+{\footnotesize\ttfamily void mydash\+\_\+job\+\_\+report (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{struct list $\ast$}]{background\+\_\+job\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+report finished job by displaying job number and command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & process id  background job list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash__buildingIn_8c_a40184d2b9a6f9f7ebe2912cb04e8946e}\label{mydash__buildingIn_8c_a40184d2b9a6f9f7ebe2912cb04e8946e}} 
+\index{mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}!mydash\+\_\+jobs@{mydash\+\_\+jobs}}
+\index{mydash\+\_\+jobs@{mydash\+\_\+jobs}!mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}}
+\subsubsection{\texorpdfstring{mydash\+\_\+jobs()}{mydash\_jobs()}}
+{\footnotesize\ttfamily void mydash\+\_\+jobs (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{struct list $\ast$}]{background\+\_\+job\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+process jobs command and list all running process and done process in the screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & process id \\
+\hline
+{\em background\+\_\+job\+\_\+list} & background job list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash__buildingIn_8c_a9f0090c390f753ef802935eea9a001c3}\label{mydash__buildingIn_8c_a9f0090c390f753ef802935eea9a001c3}} 
+\index{mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}!run\+Build\+In\+Command@{run\+Build\+In\+Command}}
+\index{run\+Build\+In\+Command@{run\+Build\+In\+Command}!mydash\+\_\+building\+In.\+c@{mydash\+\_\+building\+In.\+c}}
+\subsubsection{\texorpdfstring{run\+Build\+In\+Command()}{runBuildInCommand()}}
+{\footnotesize\ttfamily void run\+Build\+In\+Command (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{argv,  }\item[{pid\+\_\+t}]{pid,  }\item[{struct list $\ast$}]{background\+\_\+job\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+run building command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & parsed command line \\
+\hline
+{\em pid} & process id \\
+\hline
+{\em background\+\_\+job\+\_\+lis} & background job list \\
+\hline
+\end{DoxyParams}

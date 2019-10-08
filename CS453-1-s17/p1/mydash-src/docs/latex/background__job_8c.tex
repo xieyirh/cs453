@@ -1,0 +1,133 @@
+\hypertarget{background__job_8c}{}\section{background\+\_\+job.\+c File Reference}
+\label{background__job_8c}\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+{\ttfamily \#include \char`\"{}mydash.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{background__job_8c_a65d4355b9b913679b97ab73912b94596}{background\+\_\+job} (char $\ast$line)
+\begin{DoxyCompactList}\small\item\em if the command has a \& , It is a background job. \end{DoxyCompactList}\item 
+int \hyperlink{background__job_8c_aa99a289bfe888ffce0d76d531146b6bf}{equals} (const void $\ast$obj, const void $\ast$other)
+\begin{DoxyCompactList}\small\item\em linked list supply function return 0 if pid is not equal \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{background__job_8c_a3c2b7655dfda066cd088c4f1016dd8f5}{to\+String} (const void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em linked list supply function return a string with job number, process-\/id, and user input command \end{DoxyCompactList}\item 
+void \hyperlink{background__job_8c_a5283309fc25706a60c6d38c80e315970}{free\+Object} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em free objects \end{DoxyCompactList}\item 
+struct node $\ast$ \hyperlink{background__job_8c_a1cc656dfef51bbed88ad71476641953d}{create\+\_\+\+Object} (int \hyperlink{run__mydash_8c_af6d9b2a23f77924248b28ff966da4d5f}{job\+\_\+number}, pid\+\_\+t pid, char $\ast$line)
+\begin{DoxyCompactList}\small\item\em create node \end{DoxyCompactList}\item 
+struct \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object} $\ast$ \hyperlink{background__job_8c_a34f25cab8431250eba1be1d1b83a5644}{create\+\_\+job} (int \hyperlink{run__mydash_8c_af6d9b2a23f77924248b28ff966da4d5f}{job\+\_\+number}, pid\+\_\+t pid, char $\ast$line)
+\begin{DoxyCompactList}\small\item\em create job object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{background__job_8c_a65d4355b9b913679b97ab73912b94596}\label{background__job_8c_a65d4355b9b913679b97ab73912b94596}} 
+\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}!background\+\_\+job@{background\+\_\+job}}
+\index{background\+\_\+job@{background\+\_\+job}!background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+\subsubsection{\texorpdfstring{background\+\_\+job()}{background\_job()}}
+{\footnotesize\ttfamily int background\+\_\+job (\begin{DoxyParamCaption}\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+if the command has a \& , It is a background job. 
+
+also it removes the \& a and extra space. 
+\begin{DoxyParams}{Parameters}
+{\em line} & user input command line through stdin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is background job, otherwise return 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background__job_8c_a34f25cab8431250eba1be1d1b83a5644}\label{background__job_8c_a34f25cab8431250eba1be1d1b83a5644}} 
+\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}!create\+\_\+job@{create\+\_\+job}}
+\index{create\+\_\+job@{create\+\_\+job}!background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+job()}{create\_job()}}
+{\footnotesize\ttfamily struct \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object}$\ast$ create\+\_\+job (\begin{DoxyParamCaption}\item[{int}]{job\+\_\+number,  }\item[{pid\+\_\+t}]{pid,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+create job object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+\_\+number} & job number \\
+\hline
+{\em pid} & process id \\
+\hline
+{\em line} & command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+job object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background__job_8c_a1cc656dfef51bbed88ad71476641953d}\label{background__job_8c_a1cc656dfef51bbed88ad71476641953d}} 
+\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}!create\+\_\+\+Object@{create\+\_\+\+Object}}
+\index{create\+\_\+\+Object@{create\+\_\+\+Object}!background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+\+Object()}{create\_Object()}}
+{\footnotesize\ttfamily struct node$\ast$ create\+\_\+\+Object (\begin{DoxyParamCaption}\item[{int}]{job\+\_\+number,  }\item[{pid\+\_\+t}]{pid,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+create node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+\_\+number} & job number \\
+\hline
+{\em pid} & process id \\
+\hline
+{\em line} & command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+job node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background__job_8c_aa99a289bfe888ffce0d76d531146b6bf}\label{background__job_8c_aa99a289bfe888ffce0d76d531146b6bf}} 
+\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}!equals@{equals}}
+\index{equals@{equals}!background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+\subsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily int equals (\begin{DoxyParamCaption}\item[{const void $\ast$}]{obj,  }\item[{const void $\ast$}]{other }\end{DoxyParamCaption})}
+
+
+
+linked list supply function return 0 if pid is not equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & pass the first job object \\
+\hline
+{\em other} & pass the second job object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if two object\textquotesingle{}s pid number is same, otherwise return 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background__job_8c_a5283309fc25706a60c6d38c80e315970}\label{background__job_8c_a5283309fc25706a60c6d38c80e315970}} 
+\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}!free\+Object@{free\+Object}}
+\index{free\+Object@{free\+Object}!background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+\subsubsection{\texorpdfstring{free\+Object()}{freeObject()}}
+{\footnotesize\ttfamily void free\+Object (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+free objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & generic object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{background__job_8c_a3c2b7655dfda066cd088c4f1016dd8f5}\label{background__job_8c_a3c2b7655dfda066cd088c4f1016dd8f5}} 
+\index{background\+\_\+job.\+c@{background\+\_\+job.\+c}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!background\+\_\+job.\+c@{background\+\_\+job.\+c}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily char$\ast$ to\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+linked list supply function return a string with job number, process-\/id, and user input command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object} defined in \hyperlink{mydash_8h}{mydash.\+h} return string \\
+\hline
+\end{DoxyParams}

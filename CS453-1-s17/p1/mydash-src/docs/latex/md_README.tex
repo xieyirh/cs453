@@ -1,0 +1,58 @@
+\#\+Shell Project Part1
+\begin{DoxyItemize}
+\item Author\+: YI X\+IE
+\item Class\+: C\+S453 \mbox{[}Operating Systems\mbox{]} Section 1
+\end{DoxyItemize}
+
+\subsection*{Overview}
+
+In this project, we build our own shell under Linux system. This shell will accept some build in command as well as system command. We will use provided linked list to save the background processes.
+
+\subsection*{Manifest}
+
+\hyperlink{README_8md}{R\+E\+A\+D\+M\+E.\+md} {\bfseries This file} makefile {\bfseries build file for mydash project1} Testplan.\+txt {\bfseries test plan} /mydash-\/src/mydash\+\_\+building\+In.c {\bfseries build In functions} /mydash-\/src/parsing.c {\bfseries parsing command line from mydash stdin} /mydash-\/src/mydash.c {\bfseries start file} /mydash-\/src/run\+\_\+mydash.c {\bfseries implement all functions from here} /mydash-\/src/mydash.h {\bfseries header file for this project} /mydash-\/src/background\+\_\+job.c {\bfseries all functions related to process background jobs}
+
+\subsection*{Building the project}
+
+User could use {\bfseries make} to build executable file {\bfseries mydash} to run the program $\ast$./mydash$\ast$. User may need set up L\+D\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH enviroment variable so the shell can find the list library when user runs the shell. This can be done as follows\+: \textquotesingle{}export L\+D\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH=\$\+L\+D\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+TH\+:../p0/lib\textquotesingle{}
+
+\subsection*{Features and usage}
+
+The mini shell support following functionality\+:
+\begin{DoxyEnumerate}
+\item filename completion and command history
+\item Normal command execution
+\item Handling empty commands
+\item Handling E\+OF.
+\item Exit command (build in command \textquotesingle{}exit\textquotesingle{})
+\item Change Directory command (build in command \textquotesingle{}cd\textquotesingle{})
+\item Prompt
+\item Show version
+\item Background jobs
+\item Job list
+\item Simple job control
+\item Support \textquotesingle{}jobs\textquotesingle{} command (build in command \textquotesingle{}jobs\textquotesingle{})
+\end{DoxyEnumerate}
+
+\subsection*{Testing}
+
+See Test\+Plan.\+txt.
+
+\subsection*{known Bugs}
+
+
+\begin{DoxyEnumerate}
+\item cd command still could not show directory properly. Still working on it.
+\item some time there is background job with \mbox{[}defounc\mbox{]} mark when I run ps under my shell
+\item There my have some memory leak
+\end{DoxyEnumerate}
+
+\subsection*{Discussion}
+
+This is vey interesting project. It helps me understand how shell works under linux system. I had difficult time to understand how to put process into background. It takes me a while to make it work. But I am still not sure if it is the correct way to do this. It also take a while to use provided library. The examples under p0 folder helps a lot.
+
+I am still trying to fully understand to use signal handler if I put it into my job control.
+
+\subsection*{Source used}
+
+\href{http://brennan.io/2015/01/16/write-a-shell-in-c}{\tt Turtorial-\/write a shell in C} \href{https://www.cs.cornell.edu/courses/cs414/2004su/homework/shell/shel.html}{\tt writing your own shell-\/\+Cornell computer science} 

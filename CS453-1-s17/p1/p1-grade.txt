@@ -1,0 +1,102 @@
+
+Name: YIXIE@u.boisestate.edu
+
+Testing: 
+	-Submission quality:  ok
+	-Build/Makefile:   ok
+	-Compiling:   ok
+	-Linking to provided list library (5 points): ok
+	-Functional Requirements:
+		-filename completion and command history (5 points):  ok
+		-normal command execution (10 points):  ok
+		-handling empty commands (2 points):    ok
+		-handling EOF (2 points):   ok
+		-handling exit command (2 points):  ok
+		-change directory command (9 points):  
+			-no error message if cd command fails
+		-prompt (5 points):  
+			-not working -5
+        -show version (5 points):  ok
+		-background jobs (5 points): 
+        -job list (10 points): 
+			-Sometime shows jbs as running even though they are done? -4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[amit@localhost p1(p1_branch) ]$ ./mydash
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>sleep 10 &
+[1] 31109 sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>sleep 10 &
+[1] 31109 sleep 10 &
+[2] 31110 sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>sleep 10 &
+[1] 31109 sleep 10 &
+[2] 31110 sleep 10 &
+[3] 31111 sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>sleep 10 &
+[1] 31109 sleep 10 &
+[2] 31110 sleep 10 &
+[3] 31111 sleep 10 &
+[4] 31112 sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>jobs
+[1] Running sleep 10 &
+[2] Running sleep 10 &
+[3] Running sleep 10 &
+[4] Running sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>sleep 10 &
+[1] 31109 sleep 10 &
+[2] 31110 sleep 10 &
+[3] 31111 sleep 10 &
+[4] 31112 sleep 10 &
+[5] 31113 sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>
+[1] Done sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>jobs
+[2] Done sleep 10 &
+[3] Running sleep 10 &
+[4] Running sleep 10 &
+[5] Running sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>ps
+   PID TTY          TIME CMD
+  1506 pts/2    00:00:08 bash
+ 31108 pts/2    00:00:00 mydash
+ 31112 pts/2    00:00:00 sleep <defunct>
+ 31113 pts/2    00:00:00 sleep
+ 31115 pts/2    00:00:00 ps
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>jobs
+[3] Running sleep 10 &
+[4] Done sleep 10 &
+[5] Running sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>jobs
+[3] Running sleep 10 &
+[5] Running sleep 10 &
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>ps
+   PID TTY          TIME CMD
+  1506 pts/2    00:00:08 bash
+ 31108 pts/2    00:00:00 mydash
+ 31116 pts/2    00:00:00 ps
+[/home/amit/Documents/CS453-grades/students/YIXIE@u.boisestate.edu/backpack/CS453-1-s17/p1] mydash>
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        -simple job control (10 points):  ok
+        -jobs command (5 points):   ok
+		-other issues: 
+
+Valgrind (10 points):
+	-There are some small memory leaks still left -4
+
+Source code control use (10 points): ok  
+
+Design & documentation (25 points):
+	-README file (10 points): ok
+	-Doxygen docs (5 points):
+		-README isn't tied to docs (use {#mainpage} tag
+	-Code organization & style: ok 
+	-Test plan (10 points): ok  
+
+Comments:
+
+Peer Review extra credit: +10
+
+Late penalty: -12
+
+Grade:   110/120
+

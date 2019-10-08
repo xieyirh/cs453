@@ -1,0 +1,290 @@
+\hypertarget{mydash_8h}{}\section{mydash.\+h File Reference}
+\label{mydash_8h}\index{mydash.\+h@{mydash.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$readline/readline.\+h$>$}\newline
+{\ttfamily \#include $<$readline/history.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$List.\+h$>$}\newline
+{\ttfamily \#include $<$Node.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object}
+\begin{DoxyCompactList}\small\item\em mydash header file author Yi Xie version 1.\+0 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mydash_8h_a67e22a7c36e107426dffa1d2a7ce7716}{parse} (char $\ast$, char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em all functions for mydash project \end{DoxyCompactList}\item 
+void \hyperlink{mydash_8h_a662885ef2d3e6b149a0482eb04d66e19}{run\+\_\+mydash} ()
+\begin{DoxyCompactList}\small\item\em shell function to process all system command and built-\/in command \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{mydash_8h_aae6486f29a77bc5e565d66351c027c1a}{git\+\_\+version} (void)
+\item 
+int \hyperlink{mydash_8h_a7cf1d205c3caedbf4e1ce29784859b44}{mydash\+\_\+cd} (char $\ast$$\ast$)
+\item 
+int \hyperlink{mydash_8h_a2cf2f9d77aabb176e1881a529144478d}{background\+\_\+job} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em if the command has a \& , It is a background job. \end{DoxyCompactList}\item 
+int \hyperlink{mydash_8h_a9475c1046cdde19729ac7c3481e91432}{equals} (const void $\ast$, const void $\ast$)
+\begin{DoxyCompactList}\small\item\em linked list supply function return 0 if pid is not equal \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{mydash_8h_a3c2b7655dfda066cd088c4f1016dd8f5}{to\+String} (const void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em linked list supply function return a string with job number, process-\/id, and user input command \end{DoxyCompactList}\item 
+void \hyperlink{mydash_8h_a4dcef92122153bef18263c7e4953f8e0}{free\+Object} (void $\ast$)
+\begin{DoxyCompactList}\small\item\em free objects \end{DoxyCompactList}\item 
+struct node $\ast$ \hyperlink{mydash_8h_ac6eefd2978c8f52a7c0e54af15476326}{create\+\_\+\+Object} (int, pid\+\_\+t, char $\ast$)
+\begin{DoxyCompactList}\small\item\em create node \end{DoxyCompactList}\item 
+struct \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object} $\ast$ \hyperlink{mydash_8h_a8f355aca6a047f9b8ac84ed0c712495e}{create\+\_\+job} (int, pid\+\_\+t, char $\ast$)
+\begin{DoxyCompactList}\small\item\em create job object \end{DoxyCompactList}\item 
+void \hyperlink{mydash_8h_a7ed49f13d5b14cdec77fc8abd784b650}{mydash\+\_\+jobs} (pid\+\_\+t, struct list $\ast$)
+\begin{DoxyCompactList}\small\item\em process jobs command and list all running process and done process in the screen \end{DoxyCompactList}\item 
+void \hyperlink{mydash_8h_aa6b7916516cf4c192ce12a63be435a1b}{mydash\+\_\+job\+\_\+report} (pid\+\_\+t, struct list $\ast$)
+\begin{DoxyCompactList}\small\item\em report finished job by displaying job number and command \end{DoxyCompactList}\item 
+int \hyperlink{mydash_8h_a433d815d5ba47aae1dd9c4a15a838caa}{is\+Build\+In\+Command} (char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em return 1 if the command is a build-\/in command \end{DoxyCompactList}\item 
+void \hyperlink{mydash_8h_ad14154788089a90f00bb9014606b02af}{run\+Build\+In\+Command} (char $\ast$$\ast$, pid\+\_\+t, struct list $\ast$)
+\begin{DoxyCompactList}\small\item\em run building command \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mydash_8h_af6d9b2a23f77924248b28ff966da4d5f}{job\+\_\+number}
+\begin{DoxyCompactList}\small\item\em global variable to update job number \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mydash_8h_a2cf2f9d77aabb176e1881a529144478d}\label{mydash_8h_a2cf2f9d77aabb176e1881a529144478d}} 
+\index{mydash.\+h@{mydash.\+h}!background\+\_\+job@{background\+\_\+job}}
+\index{background\+\_\+job@{background\+\_\+job}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{background\+\_\+job()}{background\_job()}}
+{\footnotesize\ttfamily int background\+\_\+job (\begin{DoxyParamCaption}\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+if the command has a \& , It is a background job. 
+
+also it removes the \& a and extra space. 
+\begin{DoxyParams}{Parameters}
+{\em line} & user input command line through stdin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is background job, otherwise return 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydash_8h_a8f355aca6a047f9b8ac84ed0c712495e}\label{mydash_8h_a8f355aca6a047f9b8ac84ed0c712495e}} 
+\index{mydash.\+h@{mydash.\+h}!create\+\_\+job@{create\+\_\+job}}
+\index{create\+\_\+job@{create\+\_\+job}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{create\+\_\+job()}{create\_job()}}
+{\footnotesize\ttfamily struct \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object}$\ast$ create\+\_\+job (\begin{DoxyParamCaption}\item[{int}]{job\+\_\+number,  }\item[{pid\+\_\+t}]{pid,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+create job object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+\_\+number} & job number \\
+\hline
+{\em pid} & process id \\
+\hline
+{\em line} & command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+job object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydash_8h_ac6eefd2978c8f52a7c0e54af15476326}\label{mydash_8h_ac6eefd2978c8f52a7c0e54af15476326}} 
+\index{mydash.\+h@{mydash.\+h}!create\+\_\+\+Object@{create\+\_\+\+Object}}
+\index{create\+\_\+\+Object@{create\+\_\+\+Object}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{create\+\_\+\+Object()}{create\_Object()}}
+{\footnotesize\ttfamily struct node$\ast$ create\+\_\+\+Object (\begin{DoxyParamCaption}\item[{int}]{job\+\_\+number,  }\item[{pid\+\_\+t}]{pid,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+
+create node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+\_\+number} & job number \\
+\hline
+{\em pid} & process id \\
+\hline
+{\em line} & command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+job node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydash_8h_a9475c1046cdde19729ac7c3481e91432}\label{mydash_8h_a9475c1046cdde19729ac7c3481e91432}} 
+\index{mydash.\+h@{mydash.\+h}!equals@{equals}}
+\index{equals@{equals}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily int equals (\begin{DoxyParamCaption}\item[{const void $\ast$}]{obj,  }\item[{const void $\ast$}]{other }\end{DoxyParamCaption})}
+
+
+
+linked list supply function return 0 if pid is not equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & pass the first job object \\
+\hline
+{\em other} & pass the second job object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if two object\textquotesingle{}s pid number is same, otherwise return 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydash_8h_a4dcef92122153bef18263c7e4953f8e0}\label{mydash_8h_a4dcef92122153bef18263c7e4953f8e0}} 
+\index{mydash.\+h@{mydash.\+h}!free\+Object@{free\+Object}}
+\index{free\+Object@{free\+Object}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{free\+Object()}{freeObject()}}
+{\footnotesize\ttfamily void free\+Object (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+free objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & generic object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash_8h_aae6486f29a77bc5e565d66351c027c1a}\label{mydash_8h_aae6486f29a77bc5e565d66351c027c1a}} 
+\index{mydash.\+h@{mydash.\+h}!git\+\_\+version@{git\+\_\+version}}
+\index{git\+\_\+version@{git\+\_\+version}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{git\+\_\+version()}{git\_version()}}
+{\footnotesize\ttfamily const char$\ast$ git\+\_\+version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mydash_8h_a433d815d5ba47aae1dd9c4a15a838caa}\label{mydash_8h_a433d815d5ba47aae1dd9c4a15a838caa}} 
+\index{mydash.\+h@{mydash.\+h}!is\+Build\+In\+Command@{is\+Build\+In\+Command}}
+\index{is\+Build\+In\+Command@{is\+Build\+In\+Command}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{is\+Build\+In\+Command()}{isBuildInCommand()}}
+{\footnotesize\ttfamily int is\+Build\+In\+Command (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+return 1 if the command is a build-\/in command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & parsed command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the command is a build-\/in command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydash_8h_a7cf1d205c3caedbf4e1ce29784859b44}\label{mydash_8h_a7cf1d205c3caedbf4e1ce29784859b44}} 
+\index{mydash.\+h@{mydash.\+h}!mydash\+\_\+cd@{mydash\+\_\+cd}}
+\index{mydash\+\_\+cd@{mydash\+\_\+cd}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{mydash\+\_\+cd()}{mydash\_cd()}}
+{\footnotesize\ttfamily int mydash\+\_\+cd (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mydash_8h_aa6b7916516cf4c192ce12a63be435a1b}\label{mydash_8h_aa6b7916516cf4c192ce12a63be435a1b}} 
+\index{mydash.\+h@{mydash.\+h}!mydash\+\_\+job\+\_\+report@{mydash\+\_\+job\+\_\+report}}
+\index{mydash\+\_\+job\+\_\+report@{mydash\+\_\+job\+\_\+report}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{mydash\+\_\+job\+\_\+report()}{mydash\_job\_report()}}
+{\footnotesize\ttfamily void mydash\+\_\+job\+\_\+report (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{struct list $\ast$}]{background\+\_\+job\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+report finished job by displaying job number and command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & process id  background job list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash_8h_a7ed49f13d5b14cdec77fc8abd784b650}\label{mydash_8h_a7ed49f13d5b14cdec77fc8abd784b650}} 
+\index{mydash.\+h@{mydash.\+h}!mydash\+\_\+jobs@{mydash\+\_\+jobs}}
+\index{mydash\+\_\+jobs@{mydash\+\_\+jobs}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{mydash\+\_\+jobs()}{mydash\_jobs()}}
+{\footnotesize\ttfamily void mydash\+\_\+jobs (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{struct list $\ast$}]{background\+\_\+job\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+process jobs command and list all running process and done process in the screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & process id \\
+\hline
+{\em background\+\_\+job\+\_\+list} & background job list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash_8h_a67e22a7c36e107426dffa1d2a7ce7716}\label{mydash_8h_a67e22a7c36e107426dffa1d2a7ce7716}} 
+\index{mydash.\+h@{mydash.\+h}!parse@{parse}}
+\index{parse@{parse}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily void parse (\begin{DoxyParamCaption}\item[{char $\ast$}]{line,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+all functions for mydash project 
+
+all functions for mydash project
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & command line \\
+\hline
+{\em argv} & parsed command line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash_8h_a662885ef2d3e6b149a0482eb04d66e19}\label{mydash_8h_a662885ef2d3e6b149a0482eb04d66e19}} 
+\index{mydash.\+h@{mydash.\+h}!run\+\_\+mydash@{run\+\_\+mydash}}
+\index{run\+\_\+mydash@{run\+\_\+mydash}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{run\+\_\+mydash()}{run\_mydash()}}
+{\footnotesize\ttfamily void run\+\_\+mydash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+shell function to process all system command and built-\/in command 
+
+\mbox{\Hypertarget{mydash_8h_ad14154788089a90f00bb9014606b02af}\label{mydash_8h_ad14154788089a90f00bb9014606b02af}} 
+\index{mydash.\+h@{mydash.\+h}!run\+Build\+In\+Command@{run\+Build\+In\+Command}}
+\index{run\+Build\+In\+Command@{run\+Build\+In\+Command}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{run\+Build\+In\+Command()}{runBuildInCommand()}}
+{\footnotesize\ttfamily void run\+Build\+In\+Command (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{argv,  }\item[{pid\+\_\+t}]{pid,  }\item[{struct list $\ast$}]{background\+\_\+job\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+run building command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & parsed command line \\
+\hline
+{\em pid} & process id \\
+\hline
+{\em background\+\_\+job\+\_\+lis} & background job list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mydash_8h_a3c2b7655dfda066cd088c4f1016dd8f5}\label{mydash_8h_a3c2b7655dfda066cd088c4f1016dd8f5}} 
+\index{mydash.\+h@{mydash.\+h}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily char$\ast$ to\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+linked list supply function return a string with job number, process-\/id, and user input command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \hyperlink{structjob__info__object}{job\+\_\+info\+\_\+object} defined in \hyperlink{mydash_8h}{mydash.\+h} return string \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{mydash_8h_af6d9b2a23f77924248b28ff966da4d5f}\label{mydash_8h_af6d9b2a23f77924248b28ff966da4d5f}} 
+\index{mydash.\+h@{mydash.\+h}!job\+\_\+number@{job\+\_\+number}}
+\index{job\+\_\+number@{job\+\_\+number}!mydash.\+h@{mydash.\+h}}
+\subsubsection{\texorpdfstring{job\+\_\+number}{job\_number}}
+{\footnotesize\ttfamily int job\+\_\+number}
+
+
+
+global variable to update job number 
+

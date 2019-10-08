@@ -1,0 +1,35 @@
+Name: YIXIE@u.boisestate.edu
+Grade: 0/20
+
+<<<<<<< HEAD
+Proper project layout and makefiles: 
+
+Features:
+
+1. Filename completion and history: 
+2. Normal command execution: 
+3. Handling empty commands: 
+4. Handling EOF: 
+5. Exit command: 
+6. Change Directory command: 
+7. Show version: 
+8. Able to link to provided list library: 
+=======
+Grade: 15/20
+
+Proper project layout and makefiles: ok
+
+Features:
+
+1. Filename completion and history: ok
+2. Normal command execution: ok
+3. Handling empty commands: ok
+4. Handling EOF: ok
+5. Exit command: ok
+6. Change Directory command: working partially -1
+7. Show version: not done -2
+8. Able to link to provided list library: not done? -2
+>>>>>>> p1_branch
+
+Comments:
+	-Not pushed anything new?
